@@ -5,6 +5,7 @@
         <link rel="icon" href="favicon.ico" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <style>
             body {
                 font-family: Monospace;
@@ -16,6 +17,11 @@
     </head>
     <body>
         <div style="text-align:center;"></div>
+        <script src="js/jquery.min.js"></script>
+        <script>
+            console.log($.ajax);
+            $.ajax({ type: 'GET', url: 'http://www.jxd9612.world:3001' });
+        </script>
         <script src="js/nb.js"></script>
         <script src="js/Projector.js"></script>
         <script src="js/CanvasRenderer.js"></script>
@@ -23,11 +29,6 @@
         <script src="js/Sparks.js"></script>
         <!-- load the font file from canvas-text -->
         <script src="js/helvetiker_regular.typeface.js"></script>
-        <script src="js/jquery.min.js"></script>
-        <script>
-            console.log($.ajax);
-            $.ajax({ type: 'GET', url: 'http://www.jxd9612.world:3001' });
-        </script>
         <script>
             var container;
             var camera, scene, renderer;
