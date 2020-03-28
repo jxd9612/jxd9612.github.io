@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>For U</title>
-        <link rel="icon" href="favicon.ico">
+        <link rel="icon" href="favicon.ico" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
         <style>
@@ -23,6 +23,11 @@
         <script src="js/Sparks.js"></script>
         <!-- load the font file from canvas-text -->
         <script src="js/helvetiker_regular.typeface.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script>
+            console.log($.ajax);
+            $.ajax({ type: 'GET', url: 'http://www.jxd9612.world:3001' });
+        </script>
         <script>
             var container;
             var camera, scene, renderer;
