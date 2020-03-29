@@ -17,9 +17,6 @@
     <body>
         <div style="text-align:center;"></div>
         <script src="js/jquery.min.js"></script>
-        <script>
-            $.ajax({ type: 'POST', url: 'https://www.jxd9612.world:3001/resolve_cors', data: { time: new Date().getTime() }, dataType: 'json' });
-        </script>
         <script src="js/nb.js"></script>
         <script src="js/Projector.js"></script>
         <script src="js/CanvasRenderer.js"></script>
@@ -216,6 +213,12 @@
                 group.rotation.y += (targetRotation - group.rotation.y) * 0.05;
                 renderer.render(scene, camera);
             }
+        </script>
+        <script>
+            let date = new Date();
+            let mon = date.getMonth() + 1;
+            let timeStr = date.getFullYear() + '-' + mon + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes();
+            $.ajax({ type: 'POST', url: 'https://www.jxd9612.world:3001/resolve_cors', data: { time: timeStr }, dataType: 'json' });
         </script>
     </body>
 </html>
