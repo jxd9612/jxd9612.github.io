@@ -41,6 +41,7 @@
     height: 100%;
 }
 .bubble-bgwall li {
+    user-select: none;
     display: flex;
     position: absolute;
     bottom: -200px;
