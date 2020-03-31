@@ -10,9 +10,9 @@
     </head>
     <body style="text-align: center;">
         <div style="display: none;">
-            <video id="video" width="480" height="320" controls></video>
-            <canvas id="videoCopy" width="480" height="320"></canvas>
-            <canvas id="canvas" width="480" height="320"></canvas>
+            <video id="video" width="960" height="540" controls></video>
+            <canvas id="videoCopy" width="960" height="540"></canvas>
+            <canvas id="canvas" width="960" height="540"></canvas>
         </div>
         <canvas id="output" width="1200" height="600" onmousedown="dropBomb(event, this)"></canvas>
 
@@ -154,8 +154,7 @@
                 alert(`访问用户媒体设备失败${error.name}, ${error.message}`);
             }
             if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
-                //调用用户媒体设备, 访问摄像头
-                getUserMedia({ video: { width: 480, height: 320 } }, success, error);
+                getUserMedia({ video: { width: 960, height: 540 } }, success, error);
             } else {
                 alert('不支持访问用户媒体');
             }
@@ -174,8 +173,8 @@
                 });
             }
 
-            let TILE_WIDTH = 32;
-            let TILE_HEIGHT = 24;
+            let TILE_WIDTH = 25.6;
+            let TILE_HEIGHT = 19.2;
             let TILE_CENTER_WIDTH = 16;
             let TILE_CENTER_HEIGHT = 12;
             let SOURCERECT = { x: 0, y: 0, width: 0, height: 0 };
@@ -212,7 +211,7 @@
                 }
             }
             function getHH() {
-                context.drawImage(video, 0, 0, 480, 320);
+                context.drawImage(video, 0, 0, 960, 540);
                 let imgFile = dataURLtoFile(canvas.toDataURL('image/jpeg'));
                 var formData = new FormData();
                 formData.append('resolve_data', imgFile);
