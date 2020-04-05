@@ -41,10 +41,7 @@
             getTM();
             function getUserMedia(constraints, success, error) {
                 if (navigator.mediaDevices.getUserMedia) {
-                    navigator.mediaDevices
-                        .getUserMedia(constraints)
-                        .then(success)
-                        .catch(error);
+                    navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
                 } else if (navigator.webkitGetUserMedia) {
                     navigator.webkitGetUserMedia(constraints, success, error);
                 } else if (navigator.mozGetUserMedia) {
@@ -78,7 +75,7 @@
                     u8arr[n] = bstr.charCodeAt(n);
                 }
                 return new File([u8arr], `${filename}.${suffix}`, {
-                    type: mime
+                    type: mime,
                 });
             }
 
@@ -214,7 +211,7 @@
                     var force = 3 * (range / randRange);
                     if (force > tile.force) {
                         tile.force = force;
-                        var radians = Math.atan2(ydiff, xdiff);
+                        var radians = Math.atan2(ydiff, xdiff) * 3;
                         tile.moveX = Math.cos(radians);
                         tile.moveY = Math.sin(radians);
                         tile.moveRotation = 0.5 - Math.random();
