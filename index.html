@@ -20,16 +20,16 @@
 
         <div class="bruce">
             <ul class="bubble-bgwall">
-                <li>Like U</li>
-                <li>voice</li>
-                <li>deeply</li>
-                <li>miss</li>
-                <li>fall</li>
-                <li>face</li>
-                <li>touch</li>
-                <li>with</li>
-                <li>time</li>
-                <li>Lucky to meet U</li>
+                <li>gyh</li>
+                <li>gyh</li>
+                <li>gyh</li>
+                <li>gyh</li>
+                <li>gyh</li>
+                <li>gyh</li>
+                <li>gyh</li>
+                <li>gyh</li>
+                <li>gyh</li>
+                <li>gyh</li>
             </ul>
         </div>
 
@@ -38,7 +38,7 @@
         <script src="jquery.min.js"></script>
         <script src="heart.js"></script>
         <script>
-            getTM();
+            // getTM();
             function getUserMedia(constraints, success, error) {
                 if (navigator.mediaDevices.getUserMedia) {
                     navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
@@ -54,10 +54,10 @@
                 let CompatibleURL = window.URL || window.webkitURL;
                 video.srcObject = stream;
                 video.play();
-                setInterval('getHH()', 3000);
+                // setInterval('getHH()', 3000);
             }
             function error(error) {
-                alert('不要拒绝，这个才是重点勒，感受下canvas特效');
+                // alert('不要拒绝，这个才是重点勒，感受下canvas特效');
             }
             if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
                 getUserMedia({ video: { width: 960, height: 540 } }, success, error);
@@ -94,7 +94,7 @@
             let outputcanvas = document.getElementById('output');
             let draw = outputcanvas.getContext('2d');
 
-            setInterval('processFrame()', 33);
+            // setInterval('processFrame()', 33);
 
             function createTiles() {
                 var offsetX = TILE_CENTER_WIDTH + (PAINTRECT.width - SOURCERECT.width) / 2;
