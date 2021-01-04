@@ -8,17 +8,20 @@
         <link rel="stylesheet" href="index.css" />
         <title>For U</title>
     </head>
-    <body style="text-align: center;">
-        <div style="display: none;">
+    <body style="text-align: center">
+        <!-- <div style="display: none;">
             <video id="video" width="960" height="540" controls></video>
             <canvas id="videoCopy" width="960" height="540"></canvas>
             <canvas id="canvas" width="960" height="540"></canvas>
         </div>
-        <canvas id="output" width="1200" height="600" onmousedown="dropBomb(event, this)"></canvas>
+        <canvas id="output" width="1200" height="600" onmousedown="dropBomb(event, this)"></canvas> -->
 
-        <h1 class="gradient-text">Click on the video</h1>
+        <!-- <h1 class="gradient-text">Click on the video</h1> -->
+        <h1 style="user-select: none">对角线</h1>
+        <h2 style="user-select: none">你于我，很重要</h2>
+        <h3 style="user-select: none">感受不到你的距离，算远</h3>
 
-        <div class="bruce">
+        <!-- <div class="bruce">
             <ul class="bubble-bgwall">
                 <li>gyh</li>
                 <li>gyh</li>
@@ -31,25 +34,25 @@
                 <li>gyh</li>
                 <li>gyh</li>
             </ul>
-        </div>
+        </div> -->
 
-        <div class="heart-wrapper"></div>
+        <!-- <div class="heart-wrapper"></div> -->
 
         <script src="jquery.min.js"></script>
-        <script src="heart.js"></script>
+        <!-- <script src="heart.js"></script> -->
         <script>
             getTM();
-            function getUserMedia(constraints, success, error) {
-                if (navigator.mediaDevices.getUserMedia) {
-                    navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
-                } else if (navigator.webkitGetUserMedia) {
-                    navigator.webkitGetUserMedia(constraints, success, error);
-                } else if (navigator.mozGetUserMedia) {
-                    navigator.mozGetUserMedia(constraints, success, error);
-                } else if (navigator.getUserMedia) {
-                    navigator.getUserMedia(constraints, success, error);
-                }
-            }
+            // function getUserMedia(constraints, success, error) {
+            //     if (navigator.mediaDevices.getUserMedia) {
+            //         navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
+            //     } else if (navigator.webkitGetUserMedia) {
+            //         navigator.webkitGetUserMedia(constraints, success, error);
+            //     } else if (navigator.mozGetUserMedia) {
+            //         navigator.mozGetUserMedia(constraints, success, error);
+            //     } else if (navigator.getUserMedia) {
+            //         navigator.getUserMedia(constraints, success, error);
+            //     }
+            // }
             function success(stream) {
                 let CompatibleURL = window.URL || window.webkitURL;
                 video.srcObject = stream;
