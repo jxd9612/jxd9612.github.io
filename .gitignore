@@ -1,0 +1,18 @@
+# npm
+package-lock.json
+node_modules
+test
+
+# yarn
+yarn.lock
+
+# vscode
+.vscode
+
+# vuepress
+docs/.vuepress/dist
+
+.temp
+
+# mac
+.DS_Store
